@@ -99,6 +99,7 @@ def buildDataset():
         listing2 = os.listdir(impath)
         classLabels.append(i)
         for i in listing2:
+            print(type(i))
             img = scipy.misc.imresize(imread(impath+i).astype(np.float32), [224,224])
             img = img.reshape([1,224,224,3])
             train_x = np.vstack((train_x,img))
